@@ -10,7 +10,7 @@ chrome_options.add_argument("--no-sandbox")
 # service = Service(os.environ.get("CHROMEDRIVER_PATH"))
 driver = webdriver.Chrome(options=chrome_options)
 
-site = driver.get("https://www.telegraaf.nl")
+site = driver.get("https://google.com")
 print(site.title)
 print(site.title)
 print(site.title)
