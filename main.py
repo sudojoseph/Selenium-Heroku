@@ -7,8 +7,8 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
 
-service = Service(os.environ.get("CHROMEDRIVER_PATH"))
-driver = webdriver.Chrome(service=service, options=chrome_options)
+# service = Service(os.environ.get("CHROMEDRIVER_PATH"))
+driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("https://www.google.com")
 print(driver.title)
