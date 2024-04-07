@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from bs4 import BeautifulSoup
 import os
 
 chrome_options = webdriver.ChromeOptions()
@@ -11,9 +11,13 @@ chrome_options.add_argument("--no-sandbox")
 driver = webdriver.Chrome(options=chrome_options)
 
 driver.get("https://google.com")
-print(os.environ.get("CHROMEDRIVER_PATH"))
 print(driver.title)
-print(driver.page_source)
+html = driver.page_source
+soup = BeautifulSoup(html)
+
+for tag in soup.find_all('a'):
+    print(tag.text)
+
 print(driver.title)
 print(driver.title)
 print(driver.title)
